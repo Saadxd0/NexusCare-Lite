@@ -1,4 +1,4 @@
-# NexusCare Lite - No Database Version
+# NexusCare Lite 
 
 A simple full-stack web application for managing complaints with in-memory storage.
 
