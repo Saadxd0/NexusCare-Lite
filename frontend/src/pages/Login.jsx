@@ -28,7 +28,7 @@ const Login = () => {
       if (err.response) {
         setError(err.response.data?.error || 'Login failed')
       } else if (err.request) {
-        setError('Cannot connect to server. Make sure the backend is running on http://localhost:5000')
+        setError('Cannot connect to server. Make sure the backend is runninng on http://localhost:5000')
       } else {
         setError('An error occurred: ' + err.message)
       }

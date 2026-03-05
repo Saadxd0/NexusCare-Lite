@@ -18,36 +18,51 @@ A simple full-stack web application for managing complaints with in-memory stora
 
 ## Prerequisites
 
+### Option A — Docker (recommended)
+- **Docker** - [Download Docker Desktop](https://www.docker.com/products/docker-desktop/)
+
+### Option B — Manual setup
 - **Python 3.7+** - [Download Python](https://www.python.org/downloads/)
   - During installation, make sure to check "Add Python to PATH"
-  - After installation, verify by running: `python --version` or `py --version`
 - **Node.js and npm** - [Download Node.js](https://nodejs.org/)
 
-## Setup Instructions
+---
+
+## Running with Docker
+
+This is the easiest way to get both services running with a single command.
+
+```bash
+docker compose up --build
+```
+
+| Service  | URL                      |
+|----------|--------------------------|
+| Frontend | http://localhost:3000    |
+| Backend  | http://localhost:5000    |
+
+To stop the containers:
+```bash
+docker compose down
+```
+
+---
+
+## Manual Setup Instructions
 
 ### Backend Setup
 
-1. **Install Python** (if not already installed):
-   - Download from [python.org](https://www.python.org/downloads/)
-   - During installation, check "Add Python to PATH"
-   - Verify installation: Open a new terminal and run `python --version` or `py --version`
-
-2. Navigate to the backend directory:
+1. Navigate to the backend directory:
 ```bash
 cd backend
 ```
 
-3. Create a virtual environment (recommended):
-   - If `python` works:
-   ```bash
-   python -m venv venv
-   ```
-   - If only `py` works:
-   ```bash
-   py -m venv venv
-   ```
+2. Create a virtual environment (recommended):
+```bash
+python -m venv venv
+```
 
-4. Activate the virtual environment:
+3. Activate the virtual environment:
    - Windows (PowerShell):
    ```bash
    venv\Scripts\Activate.ps1
@@ -61,20 +76,15 @@ cd backend
    source venv/bin/activate
    ```
 
-5. Install dependencies:
+4. Install dependencies:
 ```bash
 pip install -r requirements.txt
 ```
 
-6. Run the Flask server:
-   - If `python` works:
-   ```bash
-   python app.py
-   ```
-   - If only `py` works:
-   ```bash
-   py app.py
-   ```
+5. Run the Flask server:
+```bash
+python app.py
+```
 
 The backend will run on `http://localhost:5000`
 
@@ -122,7 +132,8 @@ The frontend will run on `http://localhost:3000`
 .
 ├── backend/
 │   ├── app.py
-│   └── requirements.txt
+│   ├── requirements.txt
+│   └── Dockerfile
 ├── frontend/
 │   ├── src/
 │   │   ├── pages/
@@ -137,7 +148,10 @@ The frontend will run on `http://localhost:3000`
 │   │   └── index.css
 │   ├── index.html
 │   ├── package.json
-│   └── vite.config.js
+│   ├── vite.config.js
+│   ├── nginx.conf
+│   └── Dockerfile
+├── docker-compose.yml
 └── README.md
 ```
 
