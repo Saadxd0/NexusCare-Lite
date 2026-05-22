@@ -35,8 +35,11 @@ const Dashboard = () => {
     <div className="container">
       <div className="dashboard">
         <div className="dashboard-header">
-          <h1>Welcome, {user.username}</h1>
-          <button onClick={handleLogout} className="btn btn-secondary">
+          <div>
+            <h1>Welcome, {user.username}</h1>
+            <p className="dashboard-subtitle">Select an action to get started.</p>
+          </div>
+          <button onClick={handleLogout} className="btn btn-secondary logout-button">
             Logout
           </button>
         </div>
@@ -56,7 +59,7 @@ const Dashboard = () => {
           </button>
           <button
             onClick={() => setView('home')}
-            className="btn btn-secondary"
+            className="btn btn-secondary btn-home"
           >
             Home
           </button>

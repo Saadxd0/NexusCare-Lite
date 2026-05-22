@@ -110,10 +110,26 @@ code {
   border-bottom: 1px solid #eee;
 }
 
+.dashboard-subtitle {
+  margin-top: 8px;
+  color: #6c757d;
+  font-size: 15px;
+}
+
+.logout-button {
+  min-width: 120px;
+}
+
 .dashboard-actions {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
   margin-bottom: 30px;
+  align-items: center;
+}
+
+.btn-home {
+  margin-left: auto;
 }
 
 .complaints-table {
